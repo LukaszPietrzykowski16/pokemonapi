@@ -1,38 +1,46 @@
 import React, {useEffect, useState} from 'react';
+import PokemonInfo from './pokemonInfo';
 
 
 const Pokemon = () => {
     const [poke, setPoke] = useState([]);
-    
-
+    const [info, setInfo] = useState([])
     useEffect(() => {
         const fetchPost = async () => {
             try {
                const response = await fetch(
-                  'https://pokeapi.co/api/v2/pokemon/1'
+                  'https://pokeapi.co/api/v2/pokemon?limit=10'
                );
                const data = await response.json();
-               const pokemon = ({
-                pokemonName: data.name,
-                pokemonType: data.types,
-                pokemonImg: data.sprites.front_default,
-                pokemonId: data.id,
-                pokemonStats: data.stats
-                });
-               setPoke(pokemon);
+             
+               const arrayOfPokemons = [];
+               data.results.forEach((exactPokemon) => arrayOfPokemons.push([exactPokemon.name, exactPokemon.url]));
+               setPoke(arrayOfPokemons);
             } catch (error) {
                console.log(error);
             }
          };
          fetchPost()
     }, [])
-   console.log(poke)
+
+    const mon = PokemonInfo()
+    console.log(mon)
     return (
       <>
-        <div className='pokemon'>
-            {poke.pokemonName}
-            <img src={poke.pokemonImg}></img>
-        </div>
+        {poke.map((exactPokemon, i) => {
+            return (
+                <>
+            <div className='pokemon' key={i}> 
+            {exactPokemon[0]}
+            </div>
+            <div className='info'> 
+                <img src={mon[i]}></img>
+            </div>
+         
+                </>
+            )
+        })}
+       
       </>
     )
 }
