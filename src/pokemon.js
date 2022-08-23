@@ -4,39 +4,48 @@ import PokemonInfo from './pokemonInfo';
 
 const Pokemon = () => {
     const [poke, setPoke] = useState([]);
-    const [info, setInfo] = useState([])
+ 
+    let offset = 0;
+    const fetchPost = async () => {
+     
+        try {
+           const response = await fetch(
+            `https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offset}`
+           );
+           const data = await response.json();
+         
+           const arrayOfNewPokemons = [];
+           data.results.forEach((exactPokemon) => arrayOfNewPokemons.push(exactPokemon.name));
+           setPoke((arrayOfOldPokemons) => [...arrayOfOldPokemons, ...arrayOfNewPokemons]);
+        } catch (error) {
+           console.log(error);
+        }
+        offset += 10;
+        console.log(offset)
+     };
+   
+     const handleScroll = (e) => {
+        if (window.innerHeight + e.target.documentElement.scrollTop + 1 >= e.target.documentElement.scrollHeight){
+            fetchPost();
+        } 
+     }
+   
     useEffect(() => {
-        const fetchPost = async () => {
-            try {
-               const response = await fetch(
-                  'https://pokeapi.co/api/v2/pokemon?limit=10'
-               );
-               const data = await response.json();
-             
-               const arrayOfPokemons = [];
-               data.results.forEach((exactPokemon) => arrayOfPokemons.push([exactPokemon.name, exactPokemon.url]));
-               setPoke(arrayOfPokemons);
-            } catch (error) {
-               console.log(error);
-            }
-         };
          fetchPost()
+         window.addEventListener('scroll', handleScroll)
     }, [])
 
     const mon = PokemonInfo()
-    console.log(mon)
+    console.log(poke)
     return (
       <>
         {poke.map((exactPokemon, i) => {
             return (
                 <>
             <div className='pokemon' key={i}> 
-            {exactPokemon[0]}
+            {exactPokemon}
+            <img src={mon[i]}/>
             </div>
-            <div className='info'> 
-                <img src={mon[i]}></img>
-            </div>
-         
                 </>
             )
         })}

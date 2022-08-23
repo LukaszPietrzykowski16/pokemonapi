@@ -2,3 +2,10 @@ body {
   background-color: rgb(28, 28, 28);  
   color: rgb(190, 190, 190);
 }
+
+.pokemon {
+  background-color: rgb(23, 40, 55);
+  margin: 20px;
+  height: 20vh;
+  width: 50vw;
+}
