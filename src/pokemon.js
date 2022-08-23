@@ -36,19 +36,25 @@ const Pokemon = () => {
     }, [])
 
     const mon = PokemonInfo()
-    console.log(poke)
+    console.log(mon)
     return (
       <>
-        {poke.map((exactPokemon, i) => {
+        <div className='container'>
+            {poke.map((exactPokemon, i) => {
             return (
                 <>
             <div className='pokemon' key={i}> 
-            {exactPokemon}
-            <img src={mon[i]}/>
+            <p> {exactPokemon} </p>
+            <div className='pokemon-img'>
+                <img src={mon[i]} alt={exactPokemon}/>
+            </div>
+           
             </div>
                 </>
             )
-        })}
+            })}
+        </div>
+        
        
       </>
     )

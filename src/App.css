@@ -3,9 +3,31 @@ body {
   color: rgb(190, 190, 190);
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .pokemon {
   background-color: rgb(23, 40, 55);
   margin: 20px;
-  height: 20vh;
-  width: 50vw;
+  height: 50vh;
+  width: 40vw;
+  text-align: center;
+}
+
+.pokemon p {
+  font-size: 1.5em;
+}
+
+.pokemon img {
+  width: 70%;
+  height: 70%;
+}
+
+.pokemon-img {
+  height: 40vh;
+  width: 40vw;
 }
