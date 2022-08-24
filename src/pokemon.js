@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import PokemonInfo from './pokemonInfo';
-
+import About from './About';
 
 const Pokemon = () => {
     const [poke, setPoke] = useState([]);
@@ -22,7 +22,7 @@ const Pokemon = () => {
            console.log(error);
         }
         offset += 10;
-        console.log(offset)
+        
      };
    
      const handleScroll = (e) => {
@@ -37,20 +37,19 @@ const Pokemon = () => {
     }, [])
 
     const mon = PokemonInfo()
-    console.log(mon)
+    
     return (
       <>
         <div className='container'>
             {poke.map((exactPokemon, i) => {
             return (
                 <>
-            <Link to="/about">
+            <Link to={exactPokemon}>
             <div className='pokemon' key={i}> 
             <p> {exactPokemon} </p>
             <div className='pokemon-img'>
                 <img src={mon[i]} alt={exactPokemon}/>
             </div>
-           
             </div>
             </Link>
             
