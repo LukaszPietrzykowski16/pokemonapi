@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import Pokemon from './pokemon.js';
-
+import { Routes, Route, Link } from "react-router-dom";
+import About from './About';
 
 const App = () => {
   return (
     <div className="App">
-      <Pokemon />
+      <Routes>
+        <Route path="/" element={<Pokemon />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
  

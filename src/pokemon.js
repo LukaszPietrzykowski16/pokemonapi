@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import PokemonInfo from './pokemonInfo';
 
 
@@ -43,6 +44,7 @@ const Pokemon = () => {
             {poke.map((exactPokemon, i) => {
             return (
                 <>
+            <Link to="/about">
             <div className='pokemon' key={i}> 
             <p> {exactPokemon} </p>
             <div className='pokemon-img'>
@@ -50,6 +52,8 @@ const Pokemon = () => {
             </div>
            
             </div>
+            </Link>
+            
                 </>
             )
             })}
