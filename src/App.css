@@ -32,3 +32,10 @@ body {
   height: 40vh;
   width: 40vw;
 }
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
