@@ -34,19 +34,38 @@ function About() {
     function PokemonData(){
         return (
             <div className="pokemon-card">
-                <h1> {pokemon} </h1>
-                <img src={more.pokemonSprites0}></img>
-                 {more.pokemonType.map((element) => { return <span> {element.type.name}  </span>  })}
-                <h2> Pokemon abilities:</h2>
-                <ul>
-                    {more.pokemonAbilities.map((element) => {
-                    return <li> {element.ability.name} </li>
-                    })}
-                </ul>
-                <h3> Pokemon stats: </h3>
-                {more.pokemonStats.map((element) => {
-                    return <p> {element.stat.name}: {element.base_stat} </p> 
-                })}
+                <div className="pokemon-card-zero">
+                    <h1> {pokemon} </h1>
+                </div>
+                <div className="pokemon-card-first">
+                    <div className="pokemon-card-first-img">
+                    <img src={more.pokemonSprites0}></img>
+                    </div>
+                    <div className="pokemon-card-first-type">
+                    {more.pokemonType.map((element) => { return <span> {element.type.name}  </span>  })}
+                    SHINY
+                    </div>
+                   
+                </div>
+                <div className="pokemon-card-second">
+                    <div className="pokemond-card-second-abilities">
+                        <h3> Pokemon abilities:</h3>
+                        <ul>
+                            {more.pokemonAbilities.map((element) => {
+                            return <li> {element.ability.name} </li>
+                            })}
+                        </ul>
+                    </div>
+                    <div className="pokemond-card-second-stats">
+                        <h3> Pokemon stats: </h3>
+                        {more.pokemonStats.map((element) => {
+                            return <p> {element.stat.name}: {element.base_stat} </p> 
+                        })}
+                    </div>
+                  
+                   
+                </div>
+             
             </div>
         )
     }
