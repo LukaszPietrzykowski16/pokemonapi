@@ -1,6 +1,7 @@
 body {
   background-color: rgb(28, 28, 28);  
   color: rgb(190, 190, 190);
+  font-family: pixeloid_sansregular;
 }
 
 .container {
@@ -83,3 +84,24 @@ body {
   height: 100%;
 }
 
+.pokemond-card-second-stats {
+  width: 50%;
+}
+
+.square {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: rgb(32, 100, 160);
+  width: 40px;
+  height: 50px;
+}
+
+@font-face {
+  font-family: 'pixeloid_sansregular';
+  src: url('font/pixeloidsans-nr3g1.woff2') format('woff2'),
+       url('font/pixeloidsans-nr3g1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}

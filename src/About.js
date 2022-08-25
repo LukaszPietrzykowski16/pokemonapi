@@ -34,6 +34,7 @@ function About() {
     function PokemonData(){
         return (
             <div className="pokemon-card">
+              
                 <div className="pokemon-card-zero">
                     <h1> {pokemon} </h1>
                 </div>
@@ -59,8 +60,9 @@ function About() {
                     <div className="pokemond-card-second-stats">
                         <h3> Pokemon stats: </h3>
                         {more.pokemonStats.map((element) => {
-                            return <p> {element.stat.name}: {element.base_stat} </p> 
+                            return <span> {element.stat.name}: {element.base_stat} </span>  
                         })}
+                 
                     </div>
                   
                    
