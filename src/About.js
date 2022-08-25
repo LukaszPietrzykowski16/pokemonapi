@@ -30,11 +30,14 @@ function About() {
         fetchPokemon()
     }, [])
 
-
+   
 
     function PokemonData(){
+
+        const myStyle={backgroundImage:`url('https://raw.githubusercontent.com/LukaszPietrzykowski16/pokemonapi/master/src/background/${more.pokemonType[0].type.name}.svg')`};
         return (
-            <div className="pokemon-card">
+            <div className="main" style={myStyle}>
+            <div className="pokemon-card" >
               
                 <div className="pokemon-card-zero">
                     <h1> {pokemon} </h1>
@@ -70,13 +73,16 @@ function About() {
                 </div>
              
             </div>
+            </div>
         )
     }
-    const myStyle={backgroundImage:"url('/background/water.svg')"};
+
     return (
-        <div className="main" style={myStyle}>
+        <div>
             {isDataFetched ? PokemonData() : 'Error'}
         </div>
+        
+      
     )
 }
 
