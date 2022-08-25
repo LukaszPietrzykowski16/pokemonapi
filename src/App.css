@@ -1,18 +1,29 @@
-body {
-  background-color: rgb(28, 28, 28);  
-  color: rgb(190, 190, 190);
+body { 
   font-family: pixeloid_sansregular;
 }
+
+a:link {
+  text-decoration: none;
+  color: rgb(12, 12, 12);
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(12, 12, 12);
+}
+
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(background.svg);
+  
 }
 
 .pokemon {
-  background-color: rgb(23, 40, 55);
+  background-color: #e8e8e8;
   margin: 20px;
   height: 50vh;
   width: 40vw;
@@ -21,24 +32,20 @@ body {
 }
 
 .pokemon p {
-  font-size: 1.5em;
+  padding-top: 20px;
+  font-size: 2.5em;
 }
 
 .pokemon img {
-  width: 70%;
-  height: 100%;
+  width: 50%;
 }
 
-.pokemon-img {
-  height: 40vh;
-  width: 40vw;
-}
 
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(32, 100, 160);
+  background-image: url(background-img.svg);
   width: 100vw;
   height: 100vh;
 }
@@ -47,7 +54,7 @@ body {
 .pokemon-card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(11, 34, 54);
+  background-color: rgb(240, 240, 240);
   width: 50vw;
   height: 70vh;
 }
@@ -77,11 +84,12 @@ body {
   flex-direction: column;
   width: 40%;
 }
-
+.pokemon-card-first-img {
+  width: 50%;
+}
 
 .pokemon-card-first-img img {
-  width: 100%;
-  height: 100%;
+  width: 70%;
 }
 
 .pokemond-card-second-stats {
@@ -104,4 +112,62 @@ body {
   font-weight: normal;
   font-style: normal;
 
+}
+
+@media (max-width: 1300px) {
+  .pokemon {
+    height: 40vh;
+  }
+
+  
+.pokemon p {
+  padding-top: 20px;
+  font-size: 2.0em;
+}
+}
+
+
+
+@media (max-width: 850px) {
+  .pokemon {
+    margin: 20px;
+    height: 50vh;
+    width: 80vw;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  
+.pokemon p {
+  padding-top: 20px;
+  font-size: 2.0em;
+}
+}
+
+@media (max-width: 600px) {
+  .pokemon {
+    margin: 20px;
+    height: 35vh;
+    width: 70vw;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .pokemon p {
+    padding-top: 20px;
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 400px) {
+  .pokemon {
+    margin: 20px;
+    height: 25vh;
+    width: 70vw;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .pokemon p {
+    padding-top: 20px;
+    font-size: 1.5em;
+  }
 }

@@ -4,7 +4,7 @@ import Pokemon from "./pokemon";
 
 const PokemonInfo = () => {
     const [mon, setMon] = useState([])
-    
+
     let number = 10;
 
     const fetchPokemon = async () => {
