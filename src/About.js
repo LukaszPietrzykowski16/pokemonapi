@@ -3,9 +3,7 @@ import {useParams} from "react-router-dom";
 function About() {
     let { pokemon } = useParams();
 
-    const fillColors = [...document.getElementsByTagName('path')].map(path => path.getAttribute('fill'))
-    console.log(fillColors)
-
+ 
     const [more, setMore] = useState([])
     const [isDataFetched, setFetch] = useState(false)
     const fetchPokemon = async () => {
@@ -74,9 +72,9 @@ function About() {
             </div>
         )
     }
-
+    const myStyle={backgroundImage:"url('/background/water.svg')"};
     return (
-        <div className="main">
+        <div className="main" style={myStyle}>
             {isDataFetched ? PokemonData() : 'Error'}
         </div>
     )

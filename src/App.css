@@ -45,7 +45,6 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(background-img.svg);
   width: 100vw;
   height: 100vh;
 }
