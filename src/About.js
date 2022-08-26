@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 function About() {
     let { pokemon } = useParams();
-
- 
+    
+    console.log(pokemon)
     const [more, setMore] = useState([])
     const [isDataFetched, setFetch] = useState(false)
     const [shiny, setShiny] = useState(0)
     const fetchPokemon = async () => {
         try {
+            // for the deploymet porpusses!!! 
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             const data = await response.json();
             const poke = ({
@@ -36,7 +37,6 @@ function About() {
         shiny === 0 ? setShiny(1) : setShiny(0)
     }
 
-console.log(more)
     function PokemonData(){
 
     
