@@ -71,6 +71,24 @@ button {
   background-color: #08517a;
 }
 
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  font-size: 3.5em;
+  cursor: pointer;
+  color: #000000;
+}
+
+.pokemon-card-first-shiny {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
 
 a:link {
   text-decoration: none;
@@ -154,7 +172,7 @@ input:checked + .slider:before {
 }
 
 .pokemon img {
-  width: 50%;
+  width: 40%;
 }
 
 
@@ -193,19 +211,31 @@ input:checked + .slider:before {
   height: 40%;
 }
 
+
+
 .pokemon-card-first-type {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 40%;
+  width: 70%;
+}
+
+.pokemon-card-first-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
 }
 .pokemon-card-first-img {
   width: 50%;
+  text-align: center;
 }
 
 .pokemon-card-first-img img {
   width: 70%;
+  text-align: center;
 }
 
 .pokemond-card-second-stats {
@@ -245,6 +275,24 @@ input:checked + .slider:before {
 
 
 @media (max-width: 850px) {
+  .pokemon-card-first-shiny {
+    padding: 40px;
+  }
+
+
+  .pokemon-card-first-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+
+  .back {
+    margin: 10px;
+    font-size: 1.5em;
+  }
+
   .pokemon {
     margin: 20px;
     height: 50vh;

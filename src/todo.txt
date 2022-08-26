@@ -1,7 +1,7 @@
 [X] about page reposnive on mobile
 [X] shiny switch
-[] type display 
-[] back button
-[] maybye change background
-[] aria labels and accesiblity
+[X] type display 
+[X] back button
+[?] maybye change background
+[?] aria labels and accesiblity
 [] deploy somewhere 

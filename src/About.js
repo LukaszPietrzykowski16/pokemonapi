@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 function About() {
     let { pokemon } = useParams();
@@ -43,8 +44,13 @@ console.log(more)
         const myStyle={backgroundImage:`url('https://raw.githubusercontent.com/LukaszPietrzykowski16/pokemonapi/master/src/background/${more.pokemonType[0].type.name}.svg')`};
         return (
             <div className="main" style={myStyle}>
+               
             <div className="pokemon-card" >
-              
+            <Link to='/'>
+            <div className="back">
+               {'<<<'} Back
+            </div>
+            </Link>
                 <div className="pokemon-card-zero">
                     <h1> {pokemon} </h1>
                 </div>
@@ -52,14 +58,22 @@ console.log(more)
                     <div className="pokemon-card-first-img">
                     <img src={more.pokemonSprites[shiny]}></img>
                     </div>
-                    <div className="pokemon-card-first-type">
-                    {more.pokemonType.map((element) => { return <button className={element.type.name}> {element.type.name}  </button>  })}
-                    SHINY
-                    <label class="switch">
-                    <input type="checkbox" onClick={() => changeImg()}/>
-                    <span class="slider"></span>
-                    </label>
+                    <div className="pokemon-card-first-container">
+                        <div className="pokemon-card-first-type">
+                        {more.pokemonType.map((element) => { return <button className={element.type.name}> {element.type.name}  </button>  })}
+                        </div>
+                        <div className="pokemon-card-first-shiny">
+                        SHINY
+                        <label class="switch">
+                        <input type="checkbox" onClick={() => changeImg()}/>
+                        <span class="slider"></span>
+                        </label>
+                        </div>
+                       
+                        
+                        
                     </div>
+                    
                    
                 </div>
                 <div className="pokemon-card-second">
@@ -88,7 +102,9 @@ console.log(more)
     }
 
     return (
+        
         <div>
+          
             {isDataFetched ? PokemonData() : 'Error'}
         </div>
         
