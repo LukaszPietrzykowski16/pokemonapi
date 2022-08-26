@@ -136,6 +136,41 @@ a:visited {
     text-transform: uppercase;
   }
 
+  .pokemon-card {
+    width: 80vw;
+    height: 90vh;
+  }
+
+  .pokemon-card-first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+  }
+
+  .pokemon-card-second {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pokemond-card-second-stats {
+    width: 50%;
+    text-align: center;
+  }
+
+  .pokemon-card-first-img{
+    text-align: center;
+  }
+
+  .pokemon-card-first-img img{
+    text-align: center;
+    width: 100%;
+  }
   
 .pokemon p {
   padding-top: 20px;
