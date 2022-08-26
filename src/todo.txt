@@ -1,5 +1,5 @@
 [X] about page reposnive on mobile
-[] shiny switch
+[X] shiny switch
 [] type display 
 [] back button
 [] maybye change background

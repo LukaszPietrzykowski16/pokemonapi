@@ -6,14 +6,14 @@ function About() {
  
     const [more, setMore] = useState([])
     const [isDataFetched, setFetch] = useState(false)
+    const [shiny, setShiny] = useState(0)
     const fetchPokemon = async () => {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             const data = await response.json();
             const poke = ({
                 pokemonAbilities: data.abilities,
-                pokemonSprites0: data.sprites.front_default,
-                pokemonSprites1: data.sprites.front_shiny,
+                pokemonSprites: [data.sprites.front_default, data.sprites.front_shiny],
                 pokemonStats: data.stats,
                 pokemonType: data.types
             })
@@ -31,8 +31,14 @@ function About() {
     }, [])
 
    
+    function changeImg(){
+        shiny === 0 ? setShiny(1) : setShiny(0)
+    }
 
+console.log(more)
     function PokemonData(){
+
+    
 
         const myStyle={backgroundImage:`url('https://raw.githubusercontent.com/LukaszPietrzykowski16/pokemonapi/master/src/background/${more.pokemonType[0].type.name}.svg')`};
         return (
@@ -44,11 +50,15 @@ function About() {
                 </div>
                 <div className="pokemon-card-first">
                     <div className="pokemon-card-first-img">
-                    <img src={more.pokemonSprites0}></img>
+                    <img src={more.pokemonSprites[shiny]}></img>
                     </div>
                     <div className="pokemon-card-first-type">
                     {more.pokemonType.map((element) => { return <button className={element.type.name}> {element.type.name}  </button>  })}
                     SHINY
+                    <label class="switch">
+                    <input type="checkbox" onClick={() => changeImg()}/>
+                    <span class="slider"></span>
+                    </label>
                     </div>
                    
                 </div>
