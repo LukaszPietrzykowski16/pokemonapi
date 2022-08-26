@@ -2,6 +2,18 @@ body {
   font-family: pixeloid_sansregular;
 }
 
+button {
+  background-color: #000000; 
+  border: 1px solid white;
+  color: white;
+  padding: 12px 16px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 100%;
+}
+
 a:link {
   text-decoration: none;
   color: rgb(12, 12, 12);

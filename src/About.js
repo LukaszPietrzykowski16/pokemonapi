@@ -47,7 +47,7 @@ function About() {
                     <img src={more.pokemonSprites0}></img>
                     </div>
                     <div className="pokemon-card-first-type">
-                    {more.pokemonType.map((element) => { return <span> {element.type.name}  </span>  })}
+                    {more.pokemonType.map((element) => { return <button className={element.type.name}> {element.type.name}  </button>  })}
                     SHINY
                     </div>
                    
