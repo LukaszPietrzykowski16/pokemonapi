@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import PokemonInfo from './pokemonInfo';
 import About from './About';
-import pokeball from './pokeball.gif'
+import pokeball from './images/pokeball.gif'
 
 const Pokemon = () => {
     const [poke, setPoke] = useState([]);

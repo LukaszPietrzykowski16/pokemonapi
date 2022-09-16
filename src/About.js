@@ -56,7 +56,7 @@ function About() {
                 </div>
                 <div className="pokemon-card-first">
                     <div className="pokemon-card-first-img">
-                    <img src={more.pokemonSprites[shiny]}></img>
+                    <img src={more.pokemonSprites[shiny]} alt={pokemon}></img>
                     </div>
                     <div className="pokemon-card-first-container">
                         <div className="pokemon-card-first-type">
@@ -105,7 +105,7 @@ function About() {
         
         <div>
           
-            {isDataFetched ? PokemonData() : 'Error'}
+            {isDataFetched ? PokemonData() : <div className="error"> I can't find this page ¯\_(ツ)_/¯</div>}
         </div>
         
       
