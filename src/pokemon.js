@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import PokemonInfo from './pokemonInfo';
 import About from './About';
+import pokeball from './pokeball.gif'
 
 const Pokemon = () => {
     const [poke, setPoke] = useState([]);
@@ -38,17 +39,23 @@ const Pokemon = () => {
 
     const mon = PokemonInfo()
     
+    
+
     return (
       <>
         <div className='container'>
             {poke.map((exactPokemon, i) => {
+                
             return (
                 <>
             <Link to={exactPokemon}>
             <div className='pokemon' key={i}> 
             <p> {exactPokemon} </p>
+                
             <div className='pokemon-img'>
-                <img src={mon[i]} alt={exactPokemon}/>
+       
+                <img src={mon[i]? mon[i]: pokeball} alt={exactPokemon}/>
+     
             </div>
             </div>
             </Link>
