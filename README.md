@@ -2,11 +2,11 @@
 
 Simple website in react and popular free API - PokeApi (RESTful Pokemon API)
 
-<img src="https://lukaszpietrzykowski16.github.io/assets/img6.ec7637ae.png"/>
+<img src="https://raw.githubusercontent.com/LukaszPietrzykowski16/pokemonapi/master/src/images/img1.PNG"/>
 
 Check out live preview: https://lukaszpietrzykowski16.github.io/pokemonapi
 
-<img src="https://raw.githubusercontent.com/LukaszPietrzykowski16/pokemonapi/master/src/images/img1.PNG"/>
+<img src="https://lukaszpietrzykowski16.github.io/assets/img6.ec7637ae.png"/>
 
 React project, i was training my react skills with third party api.
 
