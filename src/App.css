@@ -1,5 +1,7 @@
 body { 
   font-family: pixeloid_sansregular;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 button {
@@ -180,7 +182,6 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 100vh;
 }
 
@@ -275,6 +276,9 @@ input:checked + .slider:before {
 
 
 @media (max-width: 850px) {
+  .main {
+    height: 120vh;
+  }
   .pokemon-card-first-shiny {
     padding: 40px;
   }
@@ -303,7 +307,7 @@ input:checked + .slider:before {
 
   .pokemon-card {
     width: 80vw;
-    height: 90vh;
+    height: 105vh;
   }
 
   .pokemon-card-first {
@@ -369,4 +373,13 @@ input:checked + .slider:before {
     padding-top: 20px;
     font-size: 1.5em;
   }
+
+  
+}
+
+@media (max-width: 340px) {
+  .pokemon-card {
+    height: 95vh;
+  }
+  
 }
